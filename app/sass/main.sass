@@ -1,0 +1,109 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "../fonts/fontawesome/scss/fontawesome.scss"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1
+	font-family: $default-font
+	overflow-x: hidden
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+=text-decor($size)
+	font-size: $size
+	color: #444444
+
+.about
+	.container
+		background-color:  #16a086
+		h2, h2 + p
+			color: #fff
+			margin: 0
+			padding: 0x
+		h2
+			margin-top: 57px
+			margin-bottom: 18px
+
+.member
+	background-color: #fff
+	width: 220px
+	margin: 43px auto 74px
+	+text-decor(14px)
+	.name
+		display: block
+		font-size: 18px
+		margin: 20px 0 8px 0
+	.position
+		display: block
+		font-style: italic
+		margin: 0
+	.description
+		display: inline-block
+		margin: 21px 9px 19px
+		text-align: left
+		line-height: 20px
+	img
+		cursor: pointer
+.avatar
+	width: 220px
+	position: relative
+	.social
+		padding: 0
+		margin: 0
+		// display: none
+		// visibility: hidden
+		position: absolute
+		opacity: 0
+		list-style: none
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 220px
+		height: 228px
+		a
+			color: #fff
+			// display: block
+			padding: 6px 9px
+			font-size: 29px
+			// width: 45px
+			// height: 48px
+			text-decoration: none
+			background-color: rgba(22, 160, 134, 0.8)
+
+.member:hover~.social, .social:hover
+	// visibility: visible
+	opacity: 1
+	.fab:hover
+		color: red
+
+
+
+
+@import "media" // Always at the end
