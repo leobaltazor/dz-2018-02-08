@@ -1,7 +1,8 @@
 @import "vars"
 @import "fonts"
 @import "libs"
-@import "../fonts/fontawesome/scss/fontawesome.scss"
+@import "../fonts/fontawesome/css/fontawesome-all.min.css"
+// @import "../fonts/fontawesome/scss/fontawesome.scss"
 
 ::placeholder
 	color: #666
@@ -177,11 +178,7 @@ header
 	transition: background-color 0.5s ease
 	&:hover
 		background-color: lighten($accent, 10%)
-	&:after
-		content: "\f13a:
-		font-family: fontawesome
-		width: 50px
-		height: 50px
+
 .arrow
 	font-size: 50px
 	color: #fff
@@ -194,7 +191,6 @@ header
 .portfolio
 	.container
 
-
 		h2, h2 + p
 			margin: 0
 			padding: 0
@@ -204,19 +200,21 @@ header
 			margin-top: 57px
 			margin-bottom: 18px
 		ul
-			list-style-type: none			
+			list-style-type: none
 			li
 				text-transform: uppercase
 				display: inline-block
+				margin-left: 15px
+				&:first-of-type
+					margin-left: 0px
 				a
 					color: #fff
-					padding: 
+					
 	&-button
-		color: #fff
 		padding: 10px 10px
-		margin-left: 15px
+		// margin-left: 15px
 		background-color: $accent
-		display: inline-block
+		display: block
 		margin-bottom: 43px
 		transition: background-color 0.5s ease
 		&:hover
@@ -256,18 +254,77 @@ header
 			margin: 0
 			padding: 0
 		h2 + p
-			margin-bottom: 80px
+			margin-bottom: 50px
 		h2
-			margin-top: 55px
-			margin-bottom: 20px
+			margin-top: 52px
+			margin-bottom: 18px
 		p
 			font-size: 14px
-			padding-left: 10px
+	&-info
+		p
 			width: 300px
-			display: block
-			
-			.fas
+			line-height: 24px
+			position: relative
+			// margin-bottom: 20px
+		&-adr
+			padding-left: 16px
+			&:before
+				content: "\f3c5"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+		&-phone
+			padding-left: 16px
+			&:before
+				content: "\f098"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+		&-fax
+			padding-left: 16px
+			&:before
+				content: "\f02f"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+		&-email
+			padding-left: 16px
+			&:before
+				content: "\f0e0"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+	form
+		box-sizing: border-box
+		float: right
+		width: 100%
+		margin-bottom: 60px
+		font-size: 14px
+		input
+			box-sizing: border-box
+			font-style: italic
+			height: 47px
+			width: calc(50% - 15px)
+			margin-bottom: 22px
+			&[type=username]
+				margin-right: 26px
+		textarea
+			width: 100%
+			font-style: italic
+			height: 153px
+		>.button
+			float: right
+			margin: 23px 0 0 0
+			width: 114px
+			font-size: 13px
+			font-weight: 700
+			font-style: normal
 
+.footer
+	background-color:  #2d3e50
+	height: 87px
+	&-copy
+		color: #fff
 
 
 @import "media" // Always at the end
